@@ -1,0 +1,318 @@
+@import '_vars'
+
+h1,h2,h3,h4,h5,h6
+	margin: 0
+
+input, select
+	font-size: inherit
+
+button
+	padding: 10px 20px
+	border: none
+	outline: none
+	color: #fff
+	border-radius: 2px
+	font-size: 16px
+	cursor: pointer
+	opacity: .8
+	@include respond-to(xlarge)
+		padding: 15px 20px
+		font-size: 22px
+	@include respond-to(xsmall)
+		font-size: 22px
+	&:hover
+		opacity: 1
+	&.primary
+		background-color: $primary-color
+	&.cancel
+		background-color: $gray
+
+body
+	margin: 0
+	padding: 0
+	font-family: $primary-font
+	background-color: #f8f8f8
+	font-size: 14px
+	@include respond-to(xlarge)
+		font-size: 18px
+	@include respond-to(xsmall)
+		font-size: 18px
+	*
+		box-sizing: border-box
+
+header
+	background-color: $primary-color
+	padding: 10px 20px
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	display: flex
+	align-items: stretch
+	justify-content: space-between
+	z-index: 5
+	@include respond-to(xlarge)
+		padding: 20px 40px
+	.logo
+		color: #fff
+		text-transform: uppercase
+		font-size: 30px
+		@extend %bold
+		@include respond-to(xlarge)
+			font-size: 40px
+		@include respond-to(xxsmall)
+			display: none
+	#search-form
+		position: relative
+		width: 30%
+		@include respond-to(small)
+			width: 50%
+		@include respond-to(xsmall)
+			width: 60%
+		@include respond-to(xxsmall)
+			width: 100%
+		&:after
+			display: block
+			content: ''
+			position: absolute
+			top: 50%
+			left: 5px
+			margin-top: -10px
+			height: 15px
+			width: 15px
+			background: transparent
+			border: 3px solid $dark
+			box-sizing: border-box
+			border-radius: 50%
+			opacity: inherit
+			@include respond-to(xlarge)
+				width: 20px
+				height: 20px
+				margin-top: -12px
+				left: 6px
+			@include respond-to(xxsmall)
+				margin-top: -9px
+		&:before
+			display: block
+			content: ''
+			width: 3px
+			height: 6px
+			background-color: $dark
+			position: absolute
+			bottom: 9px
+			left: 17px
+			z-index: 5
+			transform: rotate(-35deg)
+			opacity: inherit
+			@include respond-to(xlarge)
+				height: 10px
+				width: 5px
+				left: 22px
+				bottom: 10px
+			@include respond-to(xxsmall)
+				bottom: 10px
+		input
+			position: absolute
+			height: 100%
+			display: block
+			width: 100%
+			top: 0
+			left: 0
+			border: none
+			outline: none
+			border-radius: 2px
+			padding: 0px 40px
+			@include respond-to(xxsmall)
+				padding-top: 10px
+				padding-bottom: 10px
+				position: static
+
+aside
+	position: fixed
+	top: 55px
+	left: 0
+	height: calc(100% - 55px)
+	background-color: #FFF
+	padding: 30px
+	width: 25%
+	@include respond-to(xlarge)
+		top: 87px
+	@include respond-to(small)
+		width: 35%
+	@include respond-to(xsmall)
+		position: static
+		width: 100%
+		margin-top: 55px
+		.form-inner
+			display: flex
+			flex-wrap: wrap
+			margin: 0px -15px
+	.input-block
+		margin-bottom: 20px
+		@include respond-to(xlarge)
+			margin-bottom: 30px
+		@include respond-to(xsmall)
+			width: 50%
+			padding: 0px 15px
+		@include respond-to(xxsmall)
+			width: 100%
+		input, select
+			display: block
+			width: 100%
+			padding: 5px 15px
+			border: 1px solid #ccc
+			margin-top: 2px
+			border-radius: 2px
+			@include respond-to(xlarge)
+				padding: 15px 25px
+			@include respond-to(xsmall)
+				padding: 10px 25px
+	button
+		display: block
+		width: 100%
+		margin-bottom: 10px
+
+
+main
+	margin-top: 55px
+	margin-left: 25%
+	padding: 5px 30px
+	@include respond-to(xlarge)
+		margin-top: 87px
+	@include respond-to(small)
+		margin-left: 35%
+	@include respond-to(xsmall)
+		margin-left: 0
+
+.books
+	margin: 0 -15px
+	display: flex
+	flex-wrap: wrap
+	.book
+		padding: 15px
+		width: 50%
+		@include respond-to(xlarge)
+			width: 33.33%
+		@include respond-to(small)
+			width: 100%
+		@include respond-to(xxsmall)
+			font-size: 16px
+		.inner
+			position: relative
+			background-color: #FFF
+			padding: 10px
+			border-radius: 2px
+			box-shadow: 0 2px 2px #ccc
+			overflow: hidden
+			@include respond-to(xlarge)
+				padding: 20px
+			&:hover
+				.icons
+					top: 15px
+		.title
+			font-size: 22px
+			margin-bottom: 15px
+			@include respond-to(xlarge)
+				font-size: 25px
+		.highlight
+			background-color: #f3ef9b
+		span:not(.highlight)
+			display: block
+			margin: 10px 0
+			&:last-child
+				margin-bottom: 0
+		.icons
+			position: absolute
+			top: -100px
+			right: 15px
+			display: flex
+			transition: all .3s ease-out
+			@include respond-to(xsmall)
+				top: 15px
+			.edit
+				width: 6px
+				height: 15px
+				background-color: $primary-color
+				display: block
+				transform: rotate(35deg)
+				cursor: pointer
+				position: relative
+				right: 15px
+				margin-right: 10px
+				@include respond-to(xlarge)
+					height: 24px
+					width: 7px
+					right: 14px
+				&:after
+					position: absolute
+					top: 14px
+					right: 1px
+					display: block
+					content: ''
+					width: 0
+					height: 0
+					border-style: solid
+					border-width: 4px 0 0 4px
+					transform: rotate(-45deg)
+					border-color: transparent transparent transparent $primary-color
+					@include respond-to(xlarge)
+						top: 23px
+						border-width: 5px 0 0 5px
+			.delete
+				width: 6px
+				height: 18px
+				background-color: $primary-color
+				display: block
+				transform: rotate(45deg)
+				cursor: pointer
+				position: relative
+				@include respond-to(xlarge)
+					height: 28px
+				&:after
+					position: absolute
+					width: inherit
+					height: inherit
+					background-color: inherit
+					display: block
+					content: ''
+					transform: rotate(90deg)
+
+.error
+	display: block
+	background-color: #f99
+	color: #651111
+	text-align: center
+	padding: 3px 0
+
+#modal
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	height: 100vh
+	background-color: rgba(0,0,0,.7)
+	z-index: 500
+	display: flex
+	align-items: center
+	justify-content: center
+	.window
+		background-color: #FFF
+		width: 50%
+		padding: 20px
+		border-radius: 2px
+		font-size: 18px
+		@include respond-to(xlarge)
+			width: 40%
+		@include respond-to(small)
+			width: 70%
+		@include respond-to(xsmall)
+			width: 80%
+		.title
+			font-size: 30px
+		.text
+			margin: 10px 0
+		.buttons
+			text-align: right
+			button.primary
+				padding-left: 35px
+				padding-right: 35px

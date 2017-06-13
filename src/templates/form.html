@@ -1,0 +1,43 @@
+<div class="form-inner">
+	<div class="input-block">
+		<label>
+			Название
+			<input type="text" name="name" value="{{ name }}">
+			{{#if errors.name}}
+				<small class="error">{{{ message errors.name }}}</small>
+			{{/if}}
+		</label>
+	</div>
+	<div class="input-block">
+		<label>
+			Автор
+			<input type="text" name="author" value="{{ author }}">
+			{{#if errors.author}}
+				<small class="error">{{{ message errors.author }}}</small>
+			{{/if}}
+		</label>
+	</div>
+	<div class="input-block">
+		<label>
+			Год издания
+			<input type="text" name="year" value="{{ year }}">
+			{{#if errors.year}}
+				<small class="error">{{{ message errors.year }}}</small>
+			{{/if}}
+		</label>
+	</div>
+	<div class="input-block">
+		<label>
+			Количество страниц
+			<input type="number" name="pages" value="{{ pages }}">
+			{{#if errors.pages}}
+				<small class="error">{{{ message errors.pages }}}</small>
+			{{/if}}
+		</label>
+	</div>
+</div>
+<button class="primary">Сохранить</button>
+<div style="text-align: center;"><small>Или нажмите 'Enter'</small></div>
+{{#if id}}
+	<button class="cancel">Отмена</button>	
+{{/if}}

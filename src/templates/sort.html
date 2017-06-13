@@ -1,0 +1,25 @@
+<hr>
+<div class="form-inner">
+	<div class="input-block">
+		<label>
+			Сортировка
+			<select name="order">
+				{{#each sorts}}
+				<option value="{{@key}}" {{selected @key}} >{{this}}</option>
+				{{/each}}
+			</select>
+		</label>
+	</div>
+
+	<div class="input-block">
+		<label>
+			Порядок
+			<select name="direction">
+				{{#each direction}}
+					<option value="{{@key}}" {{selected @key}}>{{this}}</option>
+				{{/each}}
+			</select>
+		</label>
+	</div>
+
+</div>

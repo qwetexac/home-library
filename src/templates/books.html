@@ -1,0 +1,7 @@
+{{#each books}}
+	<div class="book" data-key="{{ this.state.id }}">
+		{{{ this }}}
+	</div>
+{{else}}
+  <p class="book">Сейчас нет книг. Добавьте парочку!</p>
+{{/each}}
